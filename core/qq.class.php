@@ -15,11 +15,11 @@ class Qq {
             //视频播放页面获得相应的参数
             preg_match('/title:"([^"]+)"/s', $html, $titles);
             preg_match('/duration:"([^"]+)"/s', $html, $durations);
-            preg_match('/vid:"([^"]+)"/s', $html, $vids);
+            preg_match('/VIDEO_INFO \= \{(.*?)(vid: \")(.*?)\",(.*?)\}/s', $html, $vids);
             $title = (!empty($titles[1]))?$titles[1]:'';
             $duration = $durations[1];
-            $vid = $vids[1];
-        }   
+            $vid = $vids[3];
+        }
         if($vid){
             $data = self::getVideoUrl($vid);
             return $data;

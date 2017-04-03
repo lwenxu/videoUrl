@@ -17,6 +17,7 @@ class Renren56 {
 	    	$video_url = "http://vxml.56.com/json/{$vid}/?src=site";
 	    	$video_json = Base::_cget($video_url);
 	    	$video_data = json_decode($video_json,true);
+	    	var_dump($vid);
 	    	if(is_array($video_data)&&!empty($video_data['info']['rfiles'])){
 	    		$data['title'] = $video_data['info']['Subject'];
 	    		$data['seconds'] = ceil(intval($video_data['info']['duration'])/1000);
@@ -25,7 +26,6 @@ class Renren56 {
 	    			if($val['type'] == "clear") $data['high'][] = $val['url'];
 	    			if($val['type'] == "super") $data['super'][] = $val['url'];
 	    		}
-
 	    		return $data;
 	    	}else{
 	    		return false;

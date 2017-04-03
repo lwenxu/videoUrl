@@ -17,7 +17,18 @@ function debug($url){
 //xhprof_enable(XHPROF_FLAGS_CPU + XHPROF_FLAGS_MEMORY);  //同时分析CPU和Mem的开销
 
 //$url = "http://v.qq.com/cover/y/ypq1qwp0ktzusj9/h00132shwru.html";
-$url = "http://v.youku.com/v_show/id_XNzM0MzEyNDY0.html";
+
+
+/**
+ * 可用:
+ *  bili
+ *  凤凰
+ *  酷六
+ *  乐视
+ *  qq
+ *
+ */
+$url = "http://yx.tv189.com/v/409744.htm";
 //$url = "http://www.iqiyi.com/v_19rrnbyreg.html";
 //$url = $_GET['url'];
 debug($url);
